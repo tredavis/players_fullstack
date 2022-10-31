@@ -1,0 +1,4 @@
+.Python
+env/
+.DS_Store
+players.db

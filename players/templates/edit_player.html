@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block content%}
+</div>
+<section class="container">
+   <div class="row">
+      <div class="col" a>
+         <form action="" method="post">
+            <p>
+               {{ form.first_name.label }}<br>
+               {{ form.first_name(size =32, value=player.first_name) }}
+            </p>
+            <p>
+               {{ form.last_name.label }}<br>
+               {{ form.last_name(size=32, value=player.last_name) }}
+            </p>
+            <p>
+               {{ form.city.label }}<br>
+               {{ form.city(size=32, value=player.city) }}
+            </p>
+            <p> 
+               {{ form.state.label }}<br>
+               {{ form.state(size=32, value=player.state)}}
+            </p>
+            <p>{{ form.submit() }}</p>
+         </form>
+      </div>
+   </div>
+</section>
+{% endblock %}

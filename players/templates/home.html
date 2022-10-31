@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block content%}
+<section class="container">
+   <div class="row">
+      <div class="col" >
+         <h2>Players</h2>
+         <table>
+            <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>City</th>
+               <th>State</th>
+               <th>Actions</th>
+            </tr>
+            {% for player in players %}
+            <tr>
+               <td>{{player.first_name}}</td>
+               <td>{{player.last_name}}</td>
+               <td>{{player.city}}</td>
+               <td>{{player.state}}</td>
+               <td>
+                  <a href={{ url_for('player.edit_players', id=player.id) }}>
+                     <button class="edit_button ">Edit Player</button>
+                  </a>
+                  <a href={{ url_for('player.delete_player', id=player.id) }}>
+                     <button class="delete_button ">Delete</button>
+                  </a>
+               </td>
+            </tr>
+            {% endfor %}
+            <tr>
+               <td colspan="100%">
+                  <a href={{ url_for('player.add_players') }}>
+                     <button class="add_button"> Add New Player</button>
+                  </a>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </div>
+</section>
+{% endblock %}
